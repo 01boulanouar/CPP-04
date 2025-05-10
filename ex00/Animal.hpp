@@ -6,12 +6,12 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/07 00:09:32 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 #include <iostream>
 

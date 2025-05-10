@@ -6,12 +6,12 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/07 15:26:40 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_H
-# define WRONGCAT_H
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
 # include "WrongAnimal.hpp"
 

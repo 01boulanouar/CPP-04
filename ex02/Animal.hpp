@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-# include "Animal.hpp"
+#include <iostream>
 
-class Cat: public Animal
+class Animal
 {
+    protected:
+        std::string type;
     public:
-        Cat(void);
-        Cat(const Cat &copy);
-        Cat &operator=(const Cat &copy);
-        ~Cat();
+        Animal(void);
+        Animal(const Animal &copy);
+        Animal &operator=(const Animal &copy);
+        virtual ~Animal();
 
-        void makeSound(void) const;
+        const std::string &getType(void) const;
+
+        virtual void makeSound(void) const = 0;
 };
 
 #endif

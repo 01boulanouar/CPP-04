@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   AMateria copy.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/09 10:56:30 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
-# include "Animal.hpp"
+# include <iostream>
+# include "ICharacter.hpp"
 
-class Cat: public Animal
+class ICharacter;
+
+class AMateria
 {
+    protected:
+        std::string _type;
     public:
-        Cat(void);
-        Cat(const Cat &copy);
-        Cat &operator=(const Cat &copy);
-        ~Cat();
+        AMateria(void);
+        AMateria(const AMateria &copy);
+        AMateria &operator=(const AMateria &copy);
+        virtual ~AMateria();
 
-        void makeSound(void) const;
+		AMateria(std::string const &type);
+		std::string const &getType(void) const;
+		virtual AMateria *clone() const = 0;
+		virtual void use(ICharacter &target);
+
 };
 
 #endif

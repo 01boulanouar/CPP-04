@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
+/*   Created: 2025/05/06 23:45:14 by moboulan          #+#    #+#             */
+/*   Updated: 2025/05/09 10:54:18 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-# include "Animal.hpp"
-
-class Cat: public Animal
+int main()
 {
-    public:
-        Cat(void);
-        Cat(const Cat &copy);
-        Cat &operator=(const Cat &copy);
-        ~Cat();
+    const Cat cat;
+	const Animal *animal;
 
-        void makeSound(void) const;
-};
+	animal = new Dog();
+	animal->makeSound();
+	
+	cat.makeSound();
 
-#endif
+	delete animal;
+    return (0);
+}
+
+

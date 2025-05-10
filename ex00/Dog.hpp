@@ -6,12 +6,12 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/07 00:09:37 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_H
-# define DOG_H
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include "Animal.hpp"
 

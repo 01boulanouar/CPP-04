@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource copy.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:46:15 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/09 11:58:26 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/09 10:56:30 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
-# include "Animal.hpp"
+# include <iostream>
+# include "IMateriaSource.hpp"
 
-class Cat: public Animal
+class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria *_inventory[4];
     public:
-        Cat(void);
-        Cat(const Cat &copy);
-        Cat &operator=(const Cat &copy);
-        ~Cat();
+        MateriaSource(void);
+        MateriaSource(const MateriaSource &copy);
+        MateriaSource &operator=(const MateriaSource &copy);
+        ~MateriaSource();
 
-        void makeSound(void) const;
+		void learnMateria(AMateria *m);
+		AMateria *createMateria(std::string const &type);
+
 };
 
 #endif
