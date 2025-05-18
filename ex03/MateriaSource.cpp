@@ -14,14 +14,12 @@
 
 MateriaSource::MateriaSource(void)
 {
-    std::cout << "MateriaSource: Default Constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-    std::cout << "MateriaSource: Copy Constructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if (copy._inventory[i])
@@ -33,7 +31,6 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 {
-	std::cout << "MateriaSource: Copy Assignment operator" << std::endl;
     if (this != &copy)
 	{
 		for (int i = 0; i < 4; i++)
@@ -51,7 +48,6 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &copy)
 
 MateriaSource::~MateriaSource()
 {
-    std::cout << "MateriaSource: Destructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if(_inventory[i])
@@ -68,7 +64,7 @@ void MateriaSource::learnMateria(AMateria *m)
 	{
 		if (_inventory[i] == NULL)
 		{
-			_inventory[i] = m->clone();
+			_inventory[i] = m;
 			return ;
 		}
 	}
@@ -79,7 +75,7 @@ AMateria *MateriaSource::createMateria(std::string const &type)
 	for (int i = 0; i < 4; i++)
 	{
 		if (_inventory[i] && _inventory[i]->getType() == type)
-			return _inventory[i]->clone();
+			return _inventory[i];
 	}
-	return (NULL);
+	return (0);
 }

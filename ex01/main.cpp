@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:45:14 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/08 15:38:15 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:56:35 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ int main()
         delete animals[i];
         i++;
     }
+
+    Dog a;
+    {
+        Dog b = a;
+    }
+
     return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: moboulan <moboulan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 23:51:04 by moboulan          #+#    #+#             */
-/*   Updated: 2025/05/08 15:14:55 by moboulan         ###   ########.fr       */
+/*   Updated: 2025/05/16 14:55:18 by moboulan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,8 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog(const Dog &copy) : Animal(copy)
 {
-    delete brain;
-    brain = new Brain(*copy.brain);
-
     type = copy.type;
+    brain = new Brain(*copy.brain);
     std::cout << "Dog: Copy Constructor" << std::endl;
 }
 
@@ -32,10 +30,10 @@ Dog &Dog::operator=(const Dog &copy)
 {
     if (this != &copy)
     {
-        delete brain;
-        brain = new Brain(*copy.brain);
-
         type = copy.type;
+        if (brain)
+            delete brain;
+        brain = new Brain(*copy.brain);
     }
     std::cout << "Dog: Copy Assignment operator" << std::endl;
     return (*this);
@@ -43,7 +41,8 @@ Dog &Dog::operator=(const Dog &copy)
 
 Dog::~Dog()
 {
-    delete brain;
+    if (brain)
+        delete brain;
     std::cout << "Dog: Destructor" << std::endl;
 }
 

@@ -14,23 +14,22 @@
 
 Character::Character(void)
 {
-    std::cout << "Character: Default Constructor" << std::endl;
 	_name = "default";
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
+
 }
 
 Character::Character(std::string const &name)
 {
-	std::cout << "Character: Parameterized Constructor" << std::endl;
 	_name = name;
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
+
 }
 
 Character::Character(const Character &copy)
 {
-	std::cout << "Character: Copy Constructor" << std::endl;
 	_name = copy._name;
 	for (int i = 0; i < 4; i++)
 	{
@@ -43,7 +42,6 @@ Character::Character(const Character &copy)
 
 Character &Character::operator=(const Character &copy)
 {
-    std::cout << "Character: Copy Assignment operator" << std::endl;
     if (this != &copy)
 	{
 		_name = copy._name;
@@ -62,7 +60,6 @@ Character &Character::operator=(const Character &copy)
 
 Character::~Character()
 {
-    std::cout << "Character: Destructor" << std::endl;
 	for (int i = 0; i < 4; i++)
 	{
 		if(_inventory[i])
